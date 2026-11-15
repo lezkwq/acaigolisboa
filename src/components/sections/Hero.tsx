@@ -8,7 +8,7 @@ export function Hero() {
         <source media="(max-width: 767px)" srcSet="/images/hero-lisboa-9x16.webp" />
         <img
           src="/images/hero-lisboa-16x9.webp"
-          alt="Fachada da AçaíGo Lisboa, com a placa verde e magenta sobre a entrada da loja"
+          alt="Açaí com morangos e leite em pó sobre fundo roxo"
           width={2160}
           height={1216}
           fetchPriority="high"
@@ -16,7 +16,6 @@ export function Hero() {
           className="absolute inset-0 size-full object-cover object-[50%_42%]"
         />
       </picture>
-      <div aria-hidden="true" className="absolute inset-0 -z-0 bg-black/30" />
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] items-end px-5 pt-28 pb-10 md:px-10 md:pb-14 lg:justify-end lg:pb-[9vh]">
         <div className="max-w-[41rem] text-creme lg:mr-[4vw]">
