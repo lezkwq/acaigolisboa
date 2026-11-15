@@ -77,15 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sorveteria Elee | Sorvetes, Picolés e Açaí em Brusque" },
+      { title: "AçaíGo Lisboa | Açaí, sorvetes, crepes e milk shakes em São José" },
       {
         name: "description",
         content:
-          "Sorvetes e picolés artesanais, açaí, milk shake e muito mais no Rio Branco, em Brusque.",
+          "Açaí do teu jeito, buffet de sorvetes, milk shakes, crepes e barcas na Avenida Lisboa, em São José, SC.",
       },
-      { property: "og:site_name", content: "Sorveteria Elee" },
+      { property: "og:site_name", content: "AçaíGo Lisboa" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og-acaigo-lisboa.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Fachada da AçaíGo Lisboa em São José, Santa Catarina" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#176c3f" },
     ],
     links: [
       {
@@ -98,8 +103,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap",
       },
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
-      { rel: "apple-touch-icon", href: "/favicon.png" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/icons/acaigo-32.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/icons/acaigo-180.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
     ],
   }),
 

@@ -1,93 +1,59 @@
-import { IMG_ACAI_COPOS } from "@/lib/images";
-import { WHATSAPP_URL } from "@/lib/site";
+import { WhatsappIcon } from "@/components/icons";
+import { IFOOD_URL, WHATSAPP_URL } from "@/lib/site";
 
-/**
- * Hero editorial.
- *
- * Mobile: a fotografia entra com altura controlada (~40vh) e o bloco tipografico
- * sobe sobre ela com encaixe solido em creme, no espirito de capa de revista.
- * Assim a primeira dobra ja entrega marca, manchete e CTA.
- *
- * Desktop (lg+): mantem a direcao aprovada, com texto a esquerda e foto
- * transbordando o grid a direita.
- */
 export function Hero() {
   return (
-    <section id="inicio" className="relative border-b-2 border-cacau bg-creme">
-      <div className="mx-auto grid max-w-[1600px] grid-cols-1 lg:grid-cols-12">
-        {/* Fotografia protagonista */}
-        <div className="relative order-1 lg:order-2 lg:col-span-5">
-          <div className="absolute inset-0 bg-rosa" />
-          <img
-            src={IMG_ACAI_COPOS.src}
-            srcSet={IMG_ACAI_COPOS.srcSet}
-            sizes="(min-width: 1024px) 45vw, 100vw"
-            alt="Dois copos de açaí montados com morango, granola e creme sobre balcão de inox"
-            width={960}
-            height={1600}
-            fetchPriority="high"
-            decoding="async"
-            className="relative h-[40vh] max-h-[420px] min-h-[240px] w-full object-cover object-center lg:absolute lg:inset-y-0 lg:h-full lg:max-h-none lg:w-[calc(100%+2rem)]"
-          />
-        </div>
+    <section id="inicio" className="relative isolate min-h-[100svh] overflow-hidden bg-cacau">
+      <picture className="absolute inset-0 -z-10 block h-full w-full">
+        <source media="(max-width: 767px)" srcSet="/images/hero-lisboa-9x16.webp" />
+        <img
+          src="/images/hero-lisboa-16x9.webp"
+          alt="Fachada da AçaíGo Lisboa, com a placa verde e magenta sobre a entrada da loja"
+          width={2160}
+          height={1216}
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 size-full object-cover object-[50%_42%]"
+        />
+      </picture>
 
-        {/* Bloco tipografico: encaixa sobre a foto no celular */}
-        <div className="relative order-2 -mt-10 flex flex-col justify-between border-t-2 border-cacau bg-creme px-5 pt-7 pb-10 md:px-10 lg:order-1 lg:col-span-7 lg:mt-0 lg:border-t-0 lg:pt-20 lg:pb-16">
-          <div>
-            <p className="eyebrow flex items-center gap-3 text-acai">
-              <span className="inline-block h-[2px] w-8 bg-acai" />
-              Sorveteria Elee · Brusque, SC
-            </p>
-
-            <h1 className="display-xl mt-4 text-cacau lg:mt-6">
-              Cremoso,
-              <br />
-              <span className="text-acai">gelado</span> e difícil
-              <br />
-              de largar.
-            </h1>
-
-            <p className="font-editorial mt-5 max-w-[38ch] text-xl leading-snug text-cacau/80 md:text-2xl lg:mt-8">
-              Sorvete artesanal, picolé, açaí e muito mais no Rio Branco, em Brusque.
-            </p>
-          </div>
-
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-14">
+      <div className="mx-auto flex min-h-[100svh] max-w-[1600px] items-end px-5 pt-28 pb-10 md:px-10 md:pb-14 lg:justify-end lg:pb-[9vh]">
+        <div className="max-w-[41rem] text-creme lg:mr-[4vw]">
+          <p className="eyebrow mb-4 text-ciano md:mb-6">
+            Açaí, sorvetes &amp; bons momentos · São José, SC
+          </p>
+          <h1 className="display-xl text-creme">
+            Açaí
+            <br />
+            do teu <span className="text-ciano">jeito.</span>
+          </h1>
+          <p className="mt-5 max-w-[34ch] text-lg leading-relaxed text-creme md:mt-7 md:text-xl">
+            Escolhe tua combinação favorita e aproveita. A AçaíGo Lisboa tem açaí, buffet de sorvetes,
+            milk shakes, crepes e barcas.
+          </p>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-9">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="eyebrow inline-flex h-14 items-center justify-center bg-acai px-9 text-creme transition-colors hover:bg-ameixa"
+              className="eyebrow inline-flex h-14 items-center justify-center gap-2 bg-ciano px-7 text-cacau transition-colors hover:bg-creme"
             >
-              Fazer pedido
+              <WhatsappIcon className="size-5" /> Pedir pelo WhatsApp
             </a>
             <a
-              href="#o-que-tem"
-              className="eyebrow inline-flex h-14 items-center justify-center border-2 border-cacau px-9 text-cacau transition-colors hover:bg-cacau hover:text-creme"
+              href={IFOOD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="eyebrow inline-flex h-14 items-center justify-center border-2 border-creme px-7 text-creme transition-colors hover:bg-creme hover:text-cacau"
             >
-              Ver o que tem
+              Pedir pelo iFood
             </a>
           </div>
         </div>
       </div>
-
-      {/* Faixa de repeticao inspirada em impressos antigos */}
-      <div className="overflow-hidden border-t-2 border-cacau bg-cacau py-2.5">
-        <p className="eyebrow flex justify-center gap-6 whitespace-nowrap text-creme">
-          <span>Sorvete</span>
-          <span aria-hidden="true">·</span>
-          <span>Picolé</span>
-          <span aria-hidden="true">·</span>
-          <span>Açaí</span>
-          <span aria-hidden="true">·</span>
-          <span>Milk shake</span>
-          <span aria-hidden="true">·</span>
-          <span className="hidden sm:inline">Pastel</span>
-          <span aria-hidden="true" className="hidden sm:inline">
-            ·
-          </span>
-          <span className="hidden sm:inline">Caldo de cana</span>
-        </p>
+      <div className="absolute right-5 bottom-5 hidden items-center gap-3 text-creme/85 lg:flex">
+        <span className="h-px w-12 bg-ciano" />
+        <span className="eyebrow">Av. Lisboa, 446 · São José</span>
       </div>
     </section>
   );

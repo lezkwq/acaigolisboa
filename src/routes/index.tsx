@@ -1,8 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-
 import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { WhatsappFab } from "@/components/WhatsappFab";
 import { Hero } from "@/components/sections/Hero";
 import { Produtos } from "@/components/sections/Produtos";
 import { Editorial } from "@/components/sections/Editorial";
@@ -10,53 +7,50 @@ import { Sobre } from "@/components/sections/Sobre";
 import { Avaliacoes } from "@/components/sections/Avaliacoes";
 import { Localizacao } from "@/components/sections/Localizacao";
 import { CtaFinal } from "@/components/sections/CtaFinal";
+import { SiteFooter } from "@/components/SiteFooter";
+import { WhatsappFab } from "@/components/WhatsappFab";
 
-const TITLE = "Sorveteria Elee";
+const TITLE = "AçaíGo Lisboa | Açaí, sorvetes e crepes em São José";
 const DESCRIPTION =
-  "Sorvetes e picolés artesanais, açaí, milk shake, pastel e caldo de cana no Rio Branco, em Brusque. Conheça a Sorveteria Elee.";
-const SITE_URL = "https://sorveteriaelee.lovable.app";
+  "Açaí do teu jeito, buffet de sorvetes, milk shakes, crepes e barcas na Avenida Lisboa, em São José, SC.";
 
 export const Route = createFileRoute("/")({
-  component: Index,
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: "/og-acaigo-lisboa.jpg" },
+      { property: "og:image:alt", content: "Fachada da AçaíGo Lisboa em São José, Santa Catarina" },
       { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: SITE_URL }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "IceCreamShop",
-          name: "Sorveteria Elee",
+          name: "AçaíGo Lisboa",
           description: DESCRIPTION,
-          url: SITE_URL,
-          telephone: "+554791557148",
+          telephone: "+5548991459574",
+          priceRange: "R$ 20–40",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "R. Ernesto Bianchini, 254",
-            addressLocality: "Brusque",
+            streetAddress: "Avenida Lisboa, 446",
+            addressLocality: "São José",
             addressRegion: "SC",
+            postalCode: "88107-350",
             addressCountry: "BR",
           },
-          sameAs: ["https://www.instagram.com/sorveteria_elee/"],
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.9",
-            reviewCount: "120",
-          },
+          sameAs: ["https://www.instagram.com/acaigolisboa/", "https://www.instagram.com/acaigooficial/"],
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.0", reviewCount: "312" },
         }),
       },
     ],
   }),
+  component: Index,
 });
 
 function Index() {

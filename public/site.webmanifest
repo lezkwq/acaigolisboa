@@ -1,0 +1,14 @@
+{
+  "name": "acaigo-lisboa",
+  "short_name": "AçaíGo Lisboa",
+  "description": "Açaí do teu jeito em São José, SC.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9f7f1",
+  "theme_color": "#176c3f",
+  "icons": [
+    { "src": "/icons/acaigo-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/acaigo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,27 +1,32 @@
-/**
- * Dados institucionais reais da Sorveteria Elee.
- * Nenhuma informacao aqui deve ser inventada: preco, sabor, premio ou historia
- * so entram neste arquivo quando forem fornecidos pelo cliente.
- */
+/** Informações da unidade AçaíGo Lisboa, em São José, SC. */
 
-export const WHATSAPP_NUMBER = "554791557148" as const;
+export const WHATSAPP_NUMBER = "5548991459574" as const;
 
 export const WHATSAPP_MESSAGE =
-  "Olá, vim pelo site da Sorveteria Elee e gostaria de fazer um pedido. Pode me ajudar?" as const;
+  "Olá, vim pelo site da AçaíGo Lisboa e gostaria de fazer um pedido!" as const;
 
 export const WHATSAPP_URL =
-  "https://wa.me/554791557148?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Sorveteria%20Elee%20e%20gostaria%20de%20fazer%20um%20pedido.%20Pode%20me%20ajudar%3F" as const;
+  "https://wa.me/5548991459574?text=Ol%C3%A1%2C+gostaria+de+fazer+um+pedido%21" as const;
 
-export const INSTAGRAM_URL = "https://www.instagram.com/sorveteria_elee/" as const;
+export const IFOOD_URL =
+  "https://www.ifood.com.br/delivery/sao-jose-sc/acaigolisboa-forquilhas/43d4b92d-6b04-4e5c-b681-06ab6ad83495?UTM_Medium=share" as const;
+
+export const INSTAGRAM_URL = "https://www.instagram.com/acaigolisboa/" as const;
+export const BRAND_INSTAGRAM_URL = "https://www.instagram.com/acaigooficial/" as const;
+export const LINKTREE_URL = "https://linktr.ee/acaigoficial" as const;
 
 export const ADDRESS = {
-  street: "R. Ernesto Bianchini, 254",
-  district: "Rio Branco, Brusque, SC",
+  street: "Av. Lisboa, 446",
+  district: "Lisboa · São José, SC · CEP 88107-350",
 } as const;
 
 export const MAPS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=" +
-  encodeURIComponent("R. Ernesto Bianchini, 254, Rio Branco, Brusque, SC");
+  encodeURIComponent("Av. Lisboa, 446, Lisboa, São José, SC, 88107-350");
+
+export const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent("AçaíGo Lisboa, Av. Lisboa 446, São José, SC");
 
 export interface NavItem {
   readonly label: string;
@@ -29,44 +34,55 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: readonly NavItem[] = [
-  { label: "Início", href: "#inicio" },
-  { label: "O que tem", href: "#o-que-tem" },
-  { label: "Sobre", href: "#sobre" },
+  { label: "Cardápio", href: "#cardapio" },
+  { label: "A loja", href: "#sobre" },
   { label: "Avaliações", href: "#avaliacoes" },
-  { label: "Onde estamos", href: "#onde-estamos" },
+  { label: "Como chegar", href: "#onde-estamos" },
 ] as const;
 
 export interface Category {
   readonly id: string;
   readonly name: string;
   readonly text: string;
+  readonly image: string;
+  readonly alt: string;
 }
 
 export const CATEGORIES: readonly Category[] = [
   {
     id: "acai",
     name: "Açaí",
-    text: "Cremoso, bem servido e pronto para montar do seu jeito.",
+    text: "Monte do seu jeito, com as combinações que dão vontade de voltar.",
+    image: "/images/acai-na-mao.webp",
+    alt: "Copo de açaí AçaíGo com banana, granola e creme",
   },
   {
     id: "sorvetes",
-    name: "Sorvetes",
-    text: "Dos clássicos aos sabores que fazem você mudar de ideia na hora de escolher.",
+    name: "Buffet de sorvetes",
+    text: "Escolha os sabores e monte a sobremesa no seu ritmo.",
+    image: "/images/acai-creme-morango.webp",
+    alt: "Sobremesa gelada de açaí com morangos e creme",
   },
   {
-    id: "picoles",
-    name: "Picolés",
-    text: "Produção artesanal e mais de 50 sabores para escolher.",
-  },
-  {
-    id: "milk-shakes",
+    id: "milkshakes",
     name: "Milk shakes",
-    text: "Gelados, cremosos e sem economia no sabor.",
+    text: "Cremosos, gelados e com cobertura generosa.",
+    image: "/images/milkshake-interior.webp",
+    alt: "Milk shake de chocolate com calda no copo",
   },
   {
-    id: "pastel",
-    name: "Pastel e caldo de cana",
-    text: "Para quando a vontade não para no sorvete.",
+    id: "crepes",
+    name: "Crepes",
+    text: "Uma pausa quentinha para equilibrar o passeio pelo cardápio.",
+    image: "/images/crepe-salgado.webp",
+    alt: "Crepe servido com morangos e chocolate",
+  },
+  {
+    id: "barcas",
+    name: "Barcas de açaí",
+    text: "Para dividir à mesa ou transformar o encontro em ocasião.",
+    image: "/images/barca-acai.webp",
+    alt: "Barca de açaí com morangos, creme e confeitos coloridos",
   },
 ] as const;
 
@@ -77,14 +93,9 @@ export interface Review {
 
 export const REVIEWS: readonly Review[] = [
   {
-    quote: "Sorvete muito gostoso, bem cremoso, de qualidade e sabores incríveis.",
-    author: "Angela Pereira",
-  },
-  { quote: "Ambiente agradável. Ótimo atendimento.", author: "Milene Cristina" },
-  {
-    quote: "Melhor atendimento da região, sorvete muito bom.",
-    author: "Cleiton Santos",
+    quote: "Ótimo lugar para um lanche, várias opções para quem gosta de açaí.",
+    author: "Avaliação no Google",
   },
 ] as const;
 
-export const RATING = { score: "4,9", count: "120 avaliações no Google" } as const;
+export const RATING = { score: "4,0", count: "312 avaliações no Google" } as const;
