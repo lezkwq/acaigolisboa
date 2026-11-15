@@ -17,7 +17,7 @@ export function SiteHeader() {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between gap-4 px-5 md:h-24 md:px-10">
-        <a href="#inicio" className="flex items-center gap-3 text-cacau" aria-label="AçaíGo Lisboa — início">
+        <a href="#inicio" className="flex items-center gap-3 text-cacau lg:text-creme" aria-label="AçaíGo Lisboa — início">
           <img
             src="/brand/acaigo-lisboa-logo.png"
             alt=""
@@ -26,7 +26,7 @@ export function SiteHeader() {
             className="size-12 rounded-full object-contain md:size-14"
           />
           <span className="font-display text-xl leading-none tracking-tight uppercase md:text-2xl">
-            AçaíGo <span className="text-rosa">Lisboa</span>
+            AçaíGo <span className="text-rosa lg:text-creme">Lisboa</span>
           </span>
         </a>
 
@@ -34,7 +34,7 @@ export function SiteHeader() {
           <ul className="flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="eyebrow rule-link inline-block text-cacau">
+                <a href={item.href} className="eyebrow rule-link inline-block text-cacau lg:text-creme">
                   {item.label}
                 </a>
               </li>
@@ -48,7 +48,7 @@ export function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram da AçaíGo Lisboa"
-            className="flex size-11 items-center justify-center text-cacau transition-colors hover:text-rosa"
+            className="flex size-11 items-center justify-center text-cacau transition-colors hover:text-rosa lg:text-creme lg:hover:text-ciano"
           >
             <InstagramIcon className="size-5" />
           </a>
@@ -59,6 +59,7 @@ export function SiteHeader() {
             aria-label="Pedir pelo WhatsApp"
             className="hidden h-11 items-center justify-center bg-acai px-5 text-creme transition-colors hover:bg-ameixa sm:inline-flex"
           >
+            <WhatsappIcon className="mr-2 size-4" />
             <span className="eyebrow">Pedir agora</span>
           </a>
           <button
