@@ -16,8 +16,9 @@ export function Hero() {
           className="absolute inset-0 size-full object-cover object-[50%_42%]"
         />
       </picture>
+      <div aria-hidden="true" className="absolute inset-0 -z-0 bg-black/30" />
 
-      <div className="mx-auto flex min-h-[100svh] max-w-[1600px] items-end px-5 pt-28 pb-10 md:px-10 md:pb-14 lg:justify-end lg:pb-[9vh]">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1600px] items-end px-5 pt-28 pb-10 md:px-10 md:pb-14 lg:justify-end lg:pb-[9vh]">
         <div className="max-w-[41rem] text-creme lg:mr-[4vw]">
           <p className="eyebrow mb-4 text-ciano md:mb-6">
             Açaí, sorvetes &amp; bons momentos · São José, SC
@@ -51,7 +52,7 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <div className="absolute right-5 bottom-5 hidden items-center gap-3 text-creme/85 lg:flex">
+      <div className="absolute right-5 bottom-5 z-10 hidden items-center gap-3 text-creme/85 lg:flex">
         <span className="h-px w-12 bg-ciano" />
         <span className="eyebrow">Av. Lisboa, 446 · São José</span>
       </div>
