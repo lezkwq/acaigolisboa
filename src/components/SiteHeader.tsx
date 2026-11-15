@@ -26,7 +26,7 @@ export function SiteHeader() {
             className="size-12 rounded-full object-contain md:size-14"
           />
           <span className="font-display text-xl leading-none tracking-tight uppercase md:text-2xl">
-            AçaíGo <span className="text-rosa lg:text-creme">Lisboa</span>
+            AçaíGo <span className="text-rosa lg:text-ciano">Lisboa</span>
           </span>
         </a>
 
